@@ -6,6 +6,58 @@ variable "blueprint_id" {
   type = string
 }
 
+variable "name" {
+  type = string
+  description = <<-EOF
+    {
+      "description": "Name of the configlet and property set",
+      "display_name": "Name"
+    }
+  EOF
+}
+
+variable "configlet_scope" {
+  type = string
+  description = <<-EOF
+    {
+      "description": "Scope condition for the configlet",
+      "display_name": "Configlet Scope"
+    }
+  EOF
+}
+
+variable "radius_servers" {
+  type = list(string)
+  default = []
+  description = <<-EOF
+    {
+      "description": "List of RADIUS server IP addresses",
+      "display_name": "RADIUS Servers"
+    }
+  EOF
+}
+
+variable "management_nets" {
+  type = list(string)
+  default = []
+  description = <<-EOF
+    {
+      "description": "List of management network IP addresses",
+      "display_name": "Management Networks"
+    }
+  EOF
+}
+
+variable "apstra_ip" {
+  type = string
+  description = <<-EOF
+    {
+      "description": "Apstra server IP address",
+      "display_name": "Apstra Server IP"
+    }
+  EOF
+}
+
 variable "pack_name" {
   type = string
   description = <<-EOF
